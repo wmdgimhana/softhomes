@@ -1,0 +1,102 @@
+// make responsive
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin smallMobile{
+  @media screen and (max-width: 320px) {
+      @content;
+  }
+}
+
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 90%;
+  width: 100%;
+
+  justify-content: center;
+
+  @include mobile{
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    gap: 20px;
+  }
+ 
+
+  .section {
+    display: flex;
+    gap: 50px;
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .input {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      span {
+        font-family: "Inter", sans-serif;
+      }
+
+      input {
+        font-family: "Inter", sans-serif;
+        padding: 15px;
+        border: none;
+        outline: none;
+        background-color: #f4ecca;
+        width: 300px;
+        @include mobile{
+            width: 300px;
+        }
+        
+        @include smallMobile{
+          width: 250px;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: #f4ecca;
+      padding: 15px;
+    }
+
+    button {
+      width: 200px;
+      padding: 10px;
+      font-size: 20px;
+      background-color: #f4ecca;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f7ecbc;
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+// make responsive
+@mixin mobile{
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin desktop{
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+
+.footer{
+    background-color: #D5D1C7;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        padding: 200px 100px 50px 100px;
+
+        @include mobile{
+            padding: 200px 30px 50px 30px;
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           left: 0;
+           right: 0;
+           margin: auto;
+        }
+        .section1{
+            display: flex;
+
+            .address{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .ico{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    img{
+                        width: 30;
+                        height: 30px;
+                        object-fit: cover;
+                    }
+
+                    .title{
+                        color: black;
+                        font-weight: 700;
+                        font-family: 'Inter', sans-serif;
+                    }
+                }
+
+                p{
+                    font-family: 'Inter', sans-serif;
+                    font-family: 15px;
+                    font-weight: 400;
+                    color: rgb(102, 102, 102);
+                }
+            }
+        }
+
+        .section2{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .phone{
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+
+                
+
+                .ico{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        
+                    }
+
+                    .title{
+                        color: black;
+                        font-weight: 700;
+                        font-family: 'Inter', sans-serif;
+                    }
+                }
+
+                span{
+                    font-family: 'Inter', sans-serif;
+                    color: rgb(102, 102, 102);
+                }
+            }
+
+
+            .follow{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                span{
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 500;
+                }
+
+                .icons{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+
+                    img{
+                        width: 25px;
+                        height: 25px;
+                        opacity: 0.7;
+
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+
+                    .ico{
+                        color: rgb(88, 88, 88);
+
+                        &:hover{
+                            color: rgb(68, 68, 68);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .section3{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .title{
+                color: black;
+                font-weight: 700;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .times{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                font-family: 'Inter', sans-serif;
+                color: rgb(102, 102, 102);
+            }
+        }
+    }
+
+    .bottomSection{
+        padding: 20px;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+      
+
+        .y{
+            color: #9b8208;
+        }
+
+        .companyName{
+            font-weight: 600;
+        }
+
+
+        .developer{
+            text-decoration: none;
+            color: #9b8208;
+
+            &:hover{
+                color: #756305;
+            }
+        }
+    }
+}

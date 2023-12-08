@@ -1,0 +1,198 @@
+// make responsive
+@mixin mobile{
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (max-width: 868px) {
+        @content;
+    }
+}
+
+
+@mixin desktop{
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin smallMobile{
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+.slider{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+
+   
+
+    .arrow{
+        width: 50px;
+        height: 50px;
+       justify-content: center;
+       align-items: center;
+       display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+       cursor: pointer;
+       z-index: 900;
+        border-radius: 50px;
+
+      
+      
+
+
+        &.left{
+            left: 10px;
+
+            @include mobile{
+               left: -5px;
+            }
+        }
+    
+        &.right{
+            right: 10px;
+
+            @include mobile{
+               right: -5px;
+            }
+        }
+    }
+
+    .wrapper{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        overflow: hidden;
+       
+       
+
+       .slideItem{
+          
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease-in-out;
+             
+       
+       
+       
+
+        .imgContainer{
+            width: 100vw;
+            height: 100%;
+            position: relative;
+            
+            img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+            
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 90%;
+                background: rgba(0, 0, 0, 0.3); 
+                z-index: 1;
+              }
+        }
+
+        
+    }
+    .content{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        color: #fff;
+        z-index: 4;
+
+        @include mobile{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include tablet{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+
+        h1{
+            font-family: 'Lato', sans-serif;//Aref Ruqaa Ink
+            font-size: 40px;
+            font-weight: 500;
+
+            @include mobile{
+                font-size: 40px;
+            }
+
+            @include smallMobile{
+                font-size: 25px;
+            }
+
+           
+        
+        }
+
+        p{
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+
+            @include mobile{
+               padding: 0px 20px 0px 20px;
+            }
+
+            @include smallMobile{
+                font-size: 15px;
+            }
+
+
+           
+        }
+
+
+        .button{
+            width: 150px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid #fff;
+            font-family: 'Inter';
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+       
+       
+
+            &:hover{
+                background: rgba(255, 255, 255, 0.2);
+            }
+            
+
+        }
+    }
+    }
+}

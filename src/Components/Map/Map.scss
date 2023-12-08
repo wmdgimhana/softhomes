@@ -1,0 +1,58 @@
+
+// make responsive
+@mixin mobile{
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin desktop{
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+.map{
+    margin-right: 20px;
+    @include mobile{
+        margin: 0;
+    }
+    .wrapper{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+
+        .map{
+            width: 350px;
+            height: 500px;
+            position: absolute;
+            @include mobile{
+                width: 300px;
+                height: 400px;
+                
+            }
+            
+        }
+
+        .back{
+            width: 350px;
+            height: 500px;
+            margin-right: 50px;
+            margin-bottom: 30px;
+
+            @include mobile{
+                width: 300px;
+                height: 400px;
+            }
+        }
+    }
+}

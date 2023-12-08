@@ -1,0 +1,287 @@
+// make responsive
+@mixin mobile{
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin desktop{
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+
+
+.imageGallary{
+   
+    background-color: #fff;
+    padding: 50px;
+    .topic{
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            text-align: center;
+            .y{
+                color: #F4CE14;
+            }
+    }
+
+.gallary{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile{
+        display: none;
+    }
+    
+    .wrapper{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+   
+
+        .c1{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .r1{
+            width: 400px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            background-image: url(../../assets/img1.jpg);
+        }
+
+        .r2{
+            display: flex;
+            gap: 20px;
+
+            .rc1{
+                width: 190px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                background-size: cover;
+                background-image: url(../../assets/img3.jpg);
+            }
+
+            .rc2{
+                width: 190px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                background-size: cover;
+                background-image: url(../../assets/img4.jpg);
+            }
+        }
+
+        .c2{
+            width: 200px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-size: cover;
+            background-image: url(../../assets/img2.jpg);
+        }
+    }
+
+// wrapper 2
+    .wrapper2{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+   
+
+        .c1{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .r1{
+            width: 400px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            background-image: url(../../assets/img5.jpg);
+        }
+
+        .r2{
+            display: flex;
+            gap: 20px;
+
+            .rc1{
+                width: 190px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                background-size: cover;
+                background-image: url(../../assets/img6.jpg);
+            }
+
+            .rc2{
+                width: 190px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                background-size: cover;
+                background-image: url(../../assets/img7.jpg);
+            }
+        }
+
+        .c2{
+            width: 200px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-size: cover;
+            background-image: url(../../assets/img8.jpg);
+        }
+    }
+
+
+
+    
+}
+
+
+
+@include mobile{
+    .mobileGallaries{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .mImageGallary{
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        
+            .r1{
+        
+                display: flex;
+                gap: 10px;
+        
+        
+                .c1{
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    background-position: center;
+                    background-size: cover;
+                    background-image: url(../../assets/img1.jpg);
+                }
+        
+                .c2{
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                background-size: cover;
+                    background-image: url(../../assets/img3.jpg);
+                }
+            }
+        
+            .row-l{
+                .c3{
+                width: 310px;
+                height: 150px;
+                background-size: cover;
+                background-position: center;
+                background-image: url(../../assets/img5.jpg);
+                }
+            }
+        }
+        
+        
+        // expanded mobile gallary
+        .mImageGallary2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+            .r1{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+        
+        
+                .c1{
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    object-fit: cover;
+                background-size: cover;
+                    background-image: url(../../assets/img6.jpg);
+                }
+        
+                
+                .c2{
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    object-fit: cover;
+                background-size: cover;
+                    background-image: url(../../assets/img7.jpg);
+                }
+            }
+        
+            .r2{
+                .c3{
+                    width: 150px;
+                    height: 310px;
+                    object-fit: cover;
+                    object-fit: cover;
+                    background-size: cover;
+                        background-image: url(../../assets/img8.jpg);
+                }
+            }
+        }
+    }
+}
+
+    .icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 50px;
+        padding: 40px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        font-size: 17px;
+        font-family: 'Inter', sans-serif;
+        color: rgb(128, 128, 128);
+        margin-top: 20px;
+
+        &:hover{
+            background-color: #dbdbdb;
+        }
+    
+
+      
+    }
+}

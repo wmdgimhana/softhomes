@@ -1,0 +1,246 @@
+
+
+// make responsive
+@mixin mobile{
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+
+@mixin tablet{
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin desktop{
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin smallMobile{
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+.contactus{
+    .wrapper{
+
+        .topic{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 50px;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            margin: auto;
+          max-width: 80%;
+          width: 100%;
+            bottom: -5%;
+            @include mobile{
+                padding: 30px;
+            }
+    
+    
+           
+        @include smallMobile{
+            bottom: -15%;
+            padding-bottom: 100px;
+        }
+            
+            .text{
+                font-family: 'Lato', sans-serif;
+                text-transform: uppercase;
+                font-size: 50px;
+                font-weight: 600;
+                span{
+                    color: #F4CE14;
+                }
+    
+                @include mobile{
+                    font-size: 30px;
+                }
+            }
+        }
+       
+        .contactInfo{
+            display: flex;
+            justify-content: center;
+            
+            @include mobile{
+                flex-direction: column;
+            }
+            
+            
+            .lineContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include mobile{
+                    margin-top: 20px;
+                }
+                .line{
+                    width: 3px;
+                    height: 400px;
+                    
+                    background-color: rgb(168, 168, 168);
+
+                    @include mobile{
+                        width: 100%;
+                        height: 3px;
+                    }
+                }
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+                @include mobile{
+                    margin-top: 20px;
+                }
+
+
+                .title{
+                    font-family: 'Inter', sans-serif;
+                    font-size: 30px;
+                    font-weight: 500;
+                    @include mobile{
+                        text-align: center;
+                    }
+
+                    span{
+                        color: #F4CE14;
+                    }
+                }
+
+                .details{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding-left: 20px;
+                 
+                    .infoContainer{
+                        display: flex;
+                        gap: 20px;
+                        font-family: 'Inter', sans-serif;
+
+                        .info{
+                            font-weight: 600;
+                        }
+
+                        a{
+                            color: rgb(73, 73, 73);
+
+                            &:hover{
+                                color: black;
+                            }
+                        }
+                       
+                    }
+
+                    .business{
+                        display: flex;
+                        flex-direction: column;
+                        font-family: 'Inter', sans-serif;
+                        gap: 20px;
+
+                        .times{
+                            color: black;
+                            font-weight: 600;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .followUs{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            gap: 10px;
+
+            .title{
+                font-family: 'Inter', sans-serif;
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            .icons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+
+              .ico{
+                color: black;
+                font-size: 60px;
+
+                &:hover{
+                    color: rgb(58, 58, 58);
+                }
+              }
+
+                
+                
+            }
+        }
+
+
+
+        .contactForm{
+            padding: 0px 100px 0px 100px;
+            margin-bottom: 50px;
+            display: flex;
+            left: 0;
+            right: 0;
+            margin: auto;
+            @include mobile{
+                padding: 0px 20px 0px 20px;
+            }
+
+            @include smallMobile{
+                padding: 0px 15px 0px 15px;
+            }
+            .title{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 50px;
+
+                .text{
+
+                    font-family: 'Inter', sans-serif;
+                    font-size: 30px;
+                    display: flex;
+                    gap: 10px;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+
+                .line{
+                    width: 80%;
+                    height: 2px;
+                    background-color: black;
+                }
+            }
+        }
+
+       
+    }
+}

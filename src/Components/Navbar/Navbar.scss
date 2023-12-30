@@ -1,400 +1,340 @@
 // make responsive
-@mixin mobile{
-    @media screen and (max-width: 475px) {
-        @content;
-    }
+@mixin mobile {
+  @media screen and (max-width: 475px) {
+    @content;
+  }
 }
 
-
-@mixin tablet{
-    @media screen and (max-width: 900px) {
-        @content;
-    }
+@mixin tablet {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
 }
 
-
-@mixin desktop{
-    @media screen and (max-width: 2000px) {
-        @content;
-    }
+@mixin desktop {
+  @media screen and (max-width: 10000px) {
+    @content;
+  }
 }
 
-@mixin smallMobile{
-    @media screen and (max-width: 320px) {
-        @content;
-    }
+@mixin smallMobile {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: static;
+  z-index: 999;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+  padding: 10px 40px 10px 40px;
 
+  &.scrolled {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.3s all ease-in-out;
 
-
-.navbar{
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    position: static;
-    z-index: 999;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    justify-content: space-between;
-    padding: 10px 40px 10px 40px;
-    
-  
-
-    &.scrolled {
-        background-color: rgba(0, 0, 0, 0.4);
-        transition: 0.3s all ease-in-out;
-
-        .navItems{
-            .link{
-                color: #fff;
-            }
-        }
+    .navItems {
+      .link {
+        color: #fff;
       }
-        
-  
-
-
-    @include mobile{
-        display: none;
-    }
-
-
-    @include smallMobile{
-       
-        display: none;
-    }
-
-    @include tablet{
-        display: none;
-    }
-
-
-    .logo{
-        width: 85px;
-        height: 80px;
-
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-       
-    }
-
-    .socialIco{
-        display: flex;
-        gap: 20px;
-        
-        .ico{
-            font-size: 40px;
-            cursor: pointer;
-            color: #fff;
-            
-
-            &:hover{
-                color: #e6e6e6;
-            }
-        }
-
-        .fb{
-            color: rgb(255, 255, 255);
-        }
-
-        .wa{
-            color: rgb(255, 255, 255);
-        }
-
-        .ins{
-            color: rgb(255, 255, 255);
-        }
-    }
-
- 
-    .navItems{
-        display: flex;
-        gap: 45px;
-        
-
-
-        .link{
-            cursor: pointer;
-            position: relative;
-            color: rgb(207, 207, 207);
-            font-family: 'Lato';
-            font-weight: 600;
-            
-
-            
-           
-
-            @include desktop{
-                font-size: 20px;
-            }
-           
-        }
-
-        .active{
-         border-bottom: 3px solid rgb(247, 247, 247);
-        }
-        
-    
-               
-        .link::after{
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 3px;
-            left: 0;
-            bottom: -3px;
-            background-color: rgb(255, 255, 255);
-            transition: 0.2s all ease-in-out;
-           }
-    
-    
-        .link:hover::after{
-            width: 100%;
-        }
-
-
-        
-    }
-}
-
-
-
-
-
-.mNavbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px 0 10px;
-   background-color: #fff;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    
-
-    @include desktop{
-        display: none;
-    }
-
-    @include mobile{
-        display: flex;
-     
-    }
-
-    @include tablet{
-        display: flex;
-    }
-
-    @include smallMobile{
-        display: flex;
-    }
-
-    &.scrolled {
-        background-color: rgba(0, 0, 0, 0.4);
-        transition: 0.3s all ease-in-out;
-
-        .menuIco{
-            color: #fff;
-        }
-
-    
-            
-        
-      }
-        
-.menuIco {
-    display: block; 
-    color: black;
-    
-    .ico{
-        font-size: 40px;
-        cursor: pointer;
-    }
-    
-    @include desktop {
-      display: none; 
-    }
-
-    @include tablet{
-        display: block;
-    }
-
-    @include mobile{
-        display: block;
-    }
-
-    @include smallMobile{
-        display: block;
     }
   }
 
-  .moblogo{
+  @include mobile {
+    display: none;
+  }
+
+  @include smallMobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  .logo {
+    width: 85px;
+    height: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .socialIco {
+    display: flex;
+    gap: 20px;
+
+    .ico {
+      font-size: 40px;
+      cursor: pointer;
+      color: #fff;
+
+      &:hover {
+        color: #e6e6e6;
+      }
+    }
+
+    .fb {
+      color: rgb(255, 255, 255);
+    }
+
+    .wa {
+      color: rgb(255, 255, 255);
+    }
+
+    .ins {
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  .navItems {
+    display: flex;
+    gap: 45px;
+
+    .link {
+      cursor: pointer;
+      position: relative;
+      color: rgb(207, 207, 207);
+      font-family: "Lato";
+      font-weight: 600;
+
+      @include desktop {
+        font-size: 20px;
+      }
+    }
+
+    .active {
+      border-bottom: 3px solid rgb(247, 247, 247);
+    }
+
+    .link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      left: 0;
+      bottom: -3px;
+      background-color: rgb(255, 255, 255);
+      transition: 0.2s all ease-in-out;
+    }
+
+    .link:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.mNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+
+  @include desktop {
+    display: none;
+  }
+
+  @include mobile {
+    display: flex;
+  }
+
+  @include tablet {
+    display: flex;
+  }
+
+  @include smallMobile {
+    display: flex;
+  }
+
+  &.scrolled {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.3s all ease-in-out;
+
+    .menuIco {
+      color: #fff;
+    }
+  }
+
+  .menuIco {
+    display: block;
+    color: black;
+
+    .ico {
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: block;
+    }
+
+    @include mobile {
+      display: block;
+    }
+
+    @include smallMobile {
+      display: block;
+    }
+  }
+
+  .moblogo {
     width: 85px;
     height: 80px;
     padding: 5px;
 
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-  .mobileMenu{
-    
-    @include desktop{
-        display: none;
-
-    }
-
-    @include mobile{
-        display: block;
-    }
-
-    @include smallMobile{
-        display: block;
-    }
-
-    @include tablet{
-        display: block;
-    }
-
-
-    
-   
-    .navItems{
-
-       
-
-        @include desktop{
-            display: none;
-        }
-
-        @include mobile{
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            top: 0; 
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-           
-            background-color: #fff;
-         
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            gap: 40px;
-
-            .closeIco{
-                .ico{
-                    font-size: 40px;
-                    cursor: pointer;
-                }
-            }
-            
-
-            .link{
-                cursor: pointer;
-                font-family: 'Inter', sans-serif;
-                font-size: 25px;
-                color: black;
-                
-            }
-        }
-
-
-        @include smallMobile{
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            top: 0; 
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-           
-            background-color: #fff;
-         
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            gap: 40px;
-
-            .closeIco{
-                .ico{
-                    font-size: 40px;
-                    cursor: pointer;
-                }
-            }
-            
-
-            .link{
-                cursor: pointer;
-                font-family: 'Inter', sans-serif;
-                font-size: 25px;
-                color: black;
-                
-            }
-        }
-
-
-
-        @include tablet{
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            top: 0; 
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-           
-            background-color: #fff;
-         
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            gap: 40px;
-
-            .closeIco{
-                .ico{
-                    font-size: 40px;
-                    cursor: pointer;
-                }
-            }
-            
-
-            .link{
-                cursor: pointer;
-                font-family: 'Inter', sans-serif;
-                font-size: 25px;
-                color: black;
-                
-            }
-        }
-
-        .icons{
-            display: flex;
-            gap: 10px;
-
-            .ico{
-                font-size: 40px;
-                color: black;
-            }
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
+  .mobileMenu {
+    @include desktop {
+      display: none;
+    }
+
+    @include mobile {
+      display: block;
+    }
+
+    @include smallMobile {
+      display: block;
+    }
+
+    @include tablet {
+      display: block;
+    }
+
+    .navItems {
+      @include desktop {
+        display: none;
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+
+        background-color: #fff;
+
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        gap: 40px;
+
+        .closeIco {
+          .ico {
+            font-size: 40px;
+            cursor: pointer;
+          }
+        }
+
+        .link {
+          cursor: pointer;
+          font-family: "Inter", sans-serif;
+          font-size: 25px;
+          color: black;
+        }
+      }
+
+      @include smallMobile {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+
+        background-color: #fff;
+
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        gap: 40px;
+
+        .closeIco {
+          .ico {
+            font-size: 40px;
+            cursor: pointer;
+          }
+        }
+
+        .link {
+          cursor: pointer;
+          font-family: "Inter", sans-serif;
+          font-size: 25px;
+          color: black;
+        }
+      }
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+
+        background-color: #fff;
+
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        gap: 40px;
+
+        .closeIco {
+          .ico {
+            font-size: 40px;
+            cursor: pointer;
+          }
+        }
+
+        .link {
+          cursor: pointer;
+          font-family: "Inter", sans-serif;
+          font-size: 25px;
+          color: black;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 10px;
+
+        .ico {
+          font-size: 40px;
+          color: black;
+        }
+      }
+    }
+  }
 }
-
-
